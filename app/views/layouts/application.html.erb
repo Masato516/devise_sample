@@ -12,14 +12,18 @@
   </head>
 
   <body>
-    <%= render 'users/shared/header' %>
-    <% #flashを出力 %>
-    <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>">
-          <%= message %>
-        </div>
-    <% end %>
+    <%= render 'devise/shared/header' %>
+    <div class="container-login">
 
-    <%= yield %>
+      <% #flashを出力 %>
+      <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>">
+            <%= message %>
+          </div>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
   </body>
 </html>
